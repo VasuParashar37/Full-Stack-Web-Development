@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+
+    <script>
+        // const product = {
+        //     name:"shoes",
+        //     price:18000,
+        //     'brand':"NIKE",
+        //     store:{
+        //         mall:"mumbai",
+        //         outlet:"delhi"
+        //     },
+        //     fun:function p(){
+        //         console.log("This is Brand"); 
+        //     }
+        // }
+        // console.log(product.name);
+        // console.log(product.price);
+        // product.color="black"
+        // console.log(product.color);
+        // product.name = "nike shoes"
+        // console.log(product.name);
+        // console.log(product);
+        // console.log(product['name']);
+        // console.log(product.brand);
+        // console.log(product['store']);
+        // console.log(product.fun());
+        
+        // const jsonStr = JSON.stringify(product);
+        // console.log(JSON.parse(jsonStr));
+
+
+        const object1 = {
+            name:"vasu",
+            age:23
+        }
+
+        // console.log(object1);
+        // console.log(JSON.stringify(object1))
+
+        const object2 = object1;
+        // console.log(object2);
+
+        const object3 = {
+            name:"vasu",
+            age:23
+        }
+
+        // const name = object3.name;
+        const {name, age} = object3;
+        // console.log(name, age);
+
+        const object4 = {
+            name,
+            // fun : function name() {
+            //    console.log("hello");
+                
+            // }
+            fun(){
+                console.log("hello");
+            } 
+        }
+        // object4.fun();
+        
+        // console.log(object4.name);
+
+
+        
+
+        // console.log(object3 == object1);
+        
+        const product1 ={
+            name:"NIKE Jordan 2",
+            price:25000
+        }
+        const product2 ={
+            name:"NIKE Jordan 2",
+            price:25000
+        }
+        function fun(product1, product2){
+            return product1.name === product2.name && product1.price === product2.price;
+            // return product1.price < product2.price?product1:product2;
+        }
+        console.log(fun(product1, product2));
+
+        console.log('a'.repeat(1))
+        
+        
+        
+
+    </script>
+</body>
+</html>

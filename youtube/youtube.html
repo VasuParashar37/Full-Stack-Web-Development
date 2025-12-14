@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      p {
+        font-family: Roboto;
+        margin: 0;
+      }
+      .search-bar {
+        display: block;
+      }
+      .thumbnail {
+        width: 300px;
+        height: 200px;
+        object-fit: contain;
+        display: block;
+      }
+      .video-preview {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 20px;
+        width: 300px;
+      }
+      .video-info-grid {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+      }
+      .video-title {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+      .channel-image {
+        width: 40px;
+        border-radius: 50px;
+        /* object-fit: contain; */
+      }
+      .video-author,
+      .video-stats {
+        font-size: 12px;
+        color: #606060;
+        margin-top: 10px;
+      }
+      .video-stats {
+        margin-top: 4px;
+      }
+      .video-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="search-bar" type="text" placeholder="Search.." />
+    <div class="video-grid">
+      <div class="video-preview">
+        <div class="thumbnail">
+          <img class="thumbnail" src="thumbnails/image.png" alt="" />
+        </div>
+        <div class="video-info-grid">
+          <div class="profile-picture">
+            <img
+              class="channel-image"
+              src="channel-pictures/image.png"
+              alt=""
+            />
+          </div>
+          <div class="channel-desc">
+            <p class="video-title">INJURY | Gaurav Kapoor | Stand Up Comedy</p>
+            <p class="video-author">Gaurav Kapoor</p>
+            <p class="video-stats">7.2 views . 7 months ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="video-preview">
+        <div class="thumbnail">
+          <img class="thumbnail" src="thumbnails/image2.png" alt="" />
+        </div>
+        <div class="video-info-grid">
+          <div class="profile-picture">
+            <img
+              class="channel-image"
+              src="channel-pictures/image2.png"
+              alt=""
+            />
+          </div>
+          <div class="channel-desc">
+            <p class="video-title">
+              Stranger Things 5 | Official Teaser | Netflix
+            </p>
+            <p class="video-author">Netflix</p>
+            <p class="video-stats">22M views . 2 months ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="video-preview">
+        <div class="thumbnail">
+          <img class="thumbnail" src="thumbnails/image.png" alt="" />
+        </div>
+        <div class="video-info-grid">
+          <div class="profile-picture">
+            <img
+              class="channel-image"
+              src="channel-pictures/image.png"
+              alt=""
+            />
+          </div>
+          <div class="channel-desc">
+            <p class="video-title">INJURY | Gaurav Kapoor | Stand Up Comedy</p>
+            <p class="video-author">Gaurav Kapoor</p>
+            <p class="video-stats">7.2 views . 7 months ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="video-preview">
+        <div class="thumbnail">
+          <img class="thumbnail" src="thumbnails/image2.png" alt="" />
+        </div>
+        <div class="video-info-grid">
+          <div class="profile-picture">
+            <img
+              class="channel-image"
+              src="channel-pictures/image2.png"
+              alt=""
+            />
+          </div>
+          <div class="channel-desc">
+            <p class="video-title">
+              Stranger Things 5 | Official Teaser | Netflix
+            </p>
+            <p class="video-author">Netflix</p>
+            <p class="video-stats">22M views . 2 months ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="video-preview">
+        <div class="thumbnail">
+          <img class="thumbnail" src="thumbnails/image.png" alt="" />
+        </div>
+        <div class="video-info-grid">
+          <div class="profile-picture">
+            <img
+              class="channel-image"
+              src="channel-pictures/image.png"
+              alt=""
+            />
+          </div>
+          <div class="channel-desc">
+            <p class="video-title">INJURY | Gaurav Kapoor | Stand Up Comedy</p>
+            <p class="video-author">Gaurav Kapoor</p>
+            <p class="video-stats">7.2 views . 7 months ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="video-preview">
+        <div class="thumbnail">
+          <img class="thumbnail" src="thumbnails/image2.png" alt="" />
+        </div>
+        <div class="video-info-grid">
+          <div class="profile-picture">
+            <img
+              class="channel-image"
+              src="channel-pictures/image2.png"
+              alt=""
+            />
+          </div>
+          <div class="channel-desc">
+            <p class="video-title">
+              Stranger Things 5 | Official Teaser | Netflix
+            </p>
+            <p class="video-author">Netflix</p>
+            <p class="video-stats">22M views . 2 months ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

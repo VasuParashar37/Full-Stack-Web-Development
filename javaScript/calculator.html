@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Grid Calculator</title>
+
+  <style>
+    body {
+      background:#111;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+      font-family:Arial;
+    }
+
+    .calculator {
+      width:320px;
+      background:#222;
+      padding:20px;
+      border-radius:20px;
+      box-shadow:0 0 30px #000;
+    }
+
+    .display {
+      background:#000;
+      color:#0f0;
+      padding:20px;
+      font-size:2rem;
+      border-radius:10px;
+      text-align:right;
+      margin-bottom:20px;
+      height:60px;
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+    }
+
+    .keys {
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      grid-gap:12px;
+    }
+
+    .keys button {
+      padding:20px;
+      font-size:1.2rem;
+      border:none;
+      border-radius:10px;
+      background:#333;
+      color:white;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    .keys button:hover {
+      background:#444;
+    }
+
+    button.zero {
+      grid-column:span 2;
+    }
+
+    button[data-type="equals"] {
+      background:#0d9488;
+      font-weight:bold;
+      grid-column:span 2;
+    }
+
+    button[data-type="equals"]:hover {
+      background:#0f766e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="display" id="screen">0</div>
+
+    <div class="keys">
+      <button data-type="clear">AC</button>
+      <button data-type="delete">DEL</button>
+      <button data-type="operator">%</button>
+      <button data-type="operator">/</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button data-type="operator">*</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button data-type="operator">-</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button data-type="operator">+</button>
+
+      <button class="zero">0</button>
+      <button>.</button>
+      <button data-type="equals">=</button>
+    </div>
+  </div>
+
+  <script>
+    const screen = document.getElementById("screen");
+    let current = "";       // current number being typed
+    let history = "";       // full expression
+
+    document.querySelector(".keys").addEventListener("click", (e) => {
+      if (e.target.tagName !== "BUTTON") return;
+
+      const btn = e.target;
+      const value = btn.textContent;
+      const type = btn.dataset.type;
+
+      // AC
+      if (type === "clear") {
+        current = "";
+        history = "";
+        screen.textContent = "0";
+        return;
+      }
+
+      // DEL
+      if (type === "delete") {
+        current = current.slice(0, -1);
+        screen.textContent = current || "0";
+        return;
+      }
+
+      // Operators
+      if (type === "operator") {
+        if (current === "") return; 
+        history += current + " " + value + " ";
+        current = "";
+        screen.textContent = value;
+        return;
+      }
+
+      // Equals
+      if (type === "equals") {
+        if (current === "") return;
+        history += current;
+        try {
+          let result = eval(history);
+          screen.textContent = result;
+          current = result.toString();
+          history = "";
+        } catch {
+          screen.textContent = "Error";
+          current = "";
+          history = "";
+        }
+        return;
+      }
+
+      // Numbers + decimal
+      current += value;
+      screen.textContent = current;
+    });
+  </script>
+
+</body>
+</html>

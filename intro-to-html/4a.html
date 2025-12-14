@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text {
+        padding: 10px;
+        margin-left: 15px;
+        transition: padding 1s;
+      }
+      .text:hover {
+        padding: 20px;
+      }
+      .num {
+        all: unset;
+        margin-left: 15px;
+      }
+      .shadow {
+        background-color: green;
+        border-style: solid;
+        border: none;
+        color: white;
+        transition: box-shadow 0.1s;
+      }
+      .shadow:hover {
+        box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.6);
+      }
+      .shadow:active {
+        transform: translate(5px, 5px);
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="text">Back</button>
+    <a href="">
+      <button class="num">1</button>
+    </a>
+    <a href="">
+      <button class="num">2</button>
+    </a>
+    <a href="">
+      <button class="num">3</button>
+    </a>
+    <a href="">
+      <button class="num">4</button>
+    </a>
+    <a href="">
+      <button class="num">5</button>
+    </a>
+    <button class="text">Next</button>
+
+    <button class="shadow">Shadow</button>
+  </body>
+</html>

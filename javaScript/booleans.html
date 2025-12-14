@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      // if(false)
+      //   console.log('false');
+      // else
+      //   console.log('true');
+
+      const c = 0
+      if(c)
+        console.log('yes');
+      else
+        console.log('no');
+
+      console.log(1 && 'hello');
+
+      const hour = new Date;
+      console.log(hour.getHours());
+
+
+      function greet(name){
+        if(!name){
+          console.log('Hi There');
+          return;
+        }
+        console.log(`Hello ${name}`);
+      }
+      greet();
+      
+      
+      
+      
+    </script>
+  </body>
+</html>

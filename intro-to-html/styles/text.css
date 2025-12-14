@@ -1,0 +1,15 @@
+    
+      .text {
+        font-family: "Rubik Beastly", system-ui;
+        /* font-weight: bold; */
+        font-style: italic;
+        font-size: larger;
+        text-align: center;
+      }
+      .apple {
+        text-align: center;
+        font-family: "Rubik Beastly", system-ui;
+        background-color: red;
+        padding: 15px;
+        /* font-weight: bolder; */
+      }

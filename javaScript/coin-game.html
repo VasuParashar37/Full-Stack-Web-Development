@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Game</title>
+  </head>
+  <body>
+    <button>Heads</button>
+    <button>Tails</button>
+
+    <script>
+      //   let score = {
+      //     Wins: 0,
+      //     Losses: 0,
+      //   };
+      //   const getStoredScore = localStorage.getItem("scoreStats");
+      //   if (getStoredScore) {
+      //     score = JSON.parse(getStoredScore);
+      //   }
+
+      //   let score = JSON.parse(localStorage.getItem('scoreStats')) ||{
+      //     Wins: 0,
+      //     Losses: 0,
+      //   };
+
+      let score = { Wins: 0, Losses: 0 };
+      const stored = localStorage.getItem("scoreStats");
+      if (stored) score = JSON.parse(stored);
+
+      document.querySelectorAll("button").forEach((btn) => { 
+        btn.addEventListener("click", (e) => {
+          const yourChoice = e.target.textContent;
+          const computerChoice = yourChoice === "Heads" ? "Tails" : "Heads";
+          const outcome = calculateOutcome();
+
+          let result = "";
+          if (yourChoice === outcome) {
+            result = "Win";
+            score.Wins += 1;
+          } else {
+            result = "Lose";
+            score.Losses += 1;
+          }
+          console.log(score);
+
+          localStorage.setItem("scoreStats", JSON.stringify(score));
+          console.log(localStorage.getItem('scoreStats'));
+          
+          alert(
+            `You Chose: ${yourChoice} Computer's Choice: ${computerChoice} Actual Result: ${outcome} Result: You ${result} Wins: ${score.Wins}, Losses: ${score.Losses}`
+          );
+        });
+      });
+      function calculateOutcome() {
+        const rd = Math.floor(Math.random() * 2);
+        console.log(rd);
+        return rd < 1 ? "Heads" : "Tails";
+      }
+    </script>
+  </body>
+</html>
